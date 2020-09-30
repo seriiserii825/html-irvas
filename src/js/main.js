@@ -1,6 +1,6 @@
-import custom from "./custom";
+import "./modules/slider";
+import modals from "./modules/modals";
 
 window.addEventListener('DOMContentLoaded', function (){
-	custom('first')
-	custom()
+	modals();
 });
