@@ -37,5 +37,5 @@ export default function modals() {
 
 	bindModal('.popup_engineer_btn', '.popup_engineer', '.popup_engineer .popup_close');
 	bindModal('.phone_link', '.popup', '.popup .popup_close');
-	openModalByTime('.popup', 3000);
+	// openModalByTime('.popup', 3000);
 };

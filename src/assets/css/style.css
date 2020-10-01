@@ -369,7 +369,9 @@ textarea:focus {
 .glazing_block {
   display: inline-block;
 }
-
+.glazing_block.active {
+	background-color: pink;
+}
 .glazing_block img {
   display: block;
   margin: 0 auto;
