@@ -24,8 +24,6 @@ export default function tabs(headerSelector, tabsSelector, contentSelector, acti
 
 		if(target && target.classList.contains(tabsSelector.replace(/\./, '')) || target.closest(tabsSelector).classList.contains(tabsSelector.replace(/\./, ''))){
 			tabs.forEach((item, index) => {
-				console.log(target.closest(tabsSelector));
-				console.log(item);
 				if(target === item || target.closest(tabsSelector) === item){
 					hideTabs();
 					showTab(index);
