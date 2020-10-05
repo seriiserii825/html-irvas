@@ -1,17 +1,10 @@
-export default function postForms() {
+import checkInputNumber from "./check-input-number";
+
+export default function postForms(state) {
 	const forms = document.querySelectorAll('form');
 	const inputs = document.querySelectorAll('form input');
-	const phoneInputs = document.querySelectorAll('form input[name="user_phone"]');
 
-	function checkInputNumber(input){
-		input.value = input.value.replace(/\D/, '');
-	}
-
-	phoneInputs.forEach(item => {
-		item.addEventListener('input', () => {
-			checkInputNumber(item);
-		});
-	});
+	checkInputNumber('form input[name = "user_phone"]');
 
 	const messages = {
 		loading: "Идет отправка данных",
@@ -49,7 +42,17 @@ export default function postForms() {
 			document.querySelector('.message-block').innerHTML = messages.loading;
 
 			const formData = new FormData(item);
-			postData('./assets/server.php', formData)
+
+			if(item.getAttribute('data-calc') === 'end'){
+				console.log('yes');
+				for(let key in state){
+					formData.append(key, state[key]);
+				}
+			}else{
+				console.log('no');
+			}
+
+			postData('assets/server.php', formData)
 				.then((data) => {
 					console.log(data);
 					document.querySelector('.message-block').textContent = messages.success;

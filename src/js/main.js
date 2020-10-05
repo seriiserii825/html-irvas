@@ -6,6 +6,10 @@ import timer from "./modules/timer";
 import gallery from "./modules/images";
 
 window.addEventListener('DOMContentLoaded', function (){
+	let state = {};
+
+	changeFormState(state);
+
 	modals();
 	tabs('.glazing_slider', '.glazing_block', '.glazing_content', 'active');
 	tabs('.decoration_slider', '.decoration_item', '.decoration_content > div > div', 'slick-current');
