@@ -3,6 +3,7 @@ import modals from "./modules/modals";
 import tabs from "./modules/tabs";
 import postForms from "./modules/forms";
 import timer from "./modules/timer";
+import gallery from "./modules/images";
 
 window.addEventListener('DOMContentLoaded', function (){
 	modals();
@@ -10,4 +11,5 @@ window.addEventListener('DOMContentLoaded', function (){
 	tabs('.decoration_slider', '.decoration_item', '.decoration_content > div > div', 'slick-current');
 	postForms();
 	timer('#js-timer', '2020-11-17');
+	gallery();
 });
