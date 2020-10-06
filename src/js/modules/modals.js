@@ -6,6 +6,12 @@ export default function modals() {
 		const closeModal = document.querySelector(closeModalSelector);
 		const scrollWidth = calcScroll();
 
+		function closeAllModals(){
+			document.querySelectorAll('[data-modal]').forEach(item => {
+				item.style.display = 'none';
+			});
+		}
+
 		openModal.forEach(item => {
 			item.addEventListener('click', (e) => {
 				closeAllModals();
